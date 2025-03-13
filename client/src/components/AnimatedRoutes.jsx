@@ -18,7 +18,7 @@ function AnimatedRoutes() {
             key={item.path}
             path={item.path}
             element={
-              authToken && item.path === "/" ? (
+              authToken ? (
                 <Navigate to="/home-screen" replace />
               ) : (
                 <SlideTransition>{item.page}</SlideTransition>
