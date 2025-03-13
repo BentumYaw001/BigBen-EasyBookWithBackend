@@ -1,0 +1,11 @@
+background:hsl(0, 0.40%, 51.60%);
+background: #009688;
+background:hsl(43, 89.90%, 46.50%);
+background:hsl(0, 0.00%, 47.10%);
+background: #009688;
+background: hsla(0, 0%, 0%, 1);
+background: hsla(174, 100%, 29%, 1);
+background: hsla(170, 5%, 29%, 1);
+background: hsla(96, 53%, 41%, 1);
+background: hsla(3, 69%, 49%, 1);
+background: hsla(55, 97%, 58%, 1);

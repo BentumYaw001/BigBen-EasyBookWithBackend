@@ -1,0 +1,888 @@
+* {
+  margin: 0;
+}
+
+.Icons:has(input:not(:placeholder-shown)):has(input:valid) {
+  border: 1px solid green;
+}
+
+.Icons:has(input:not(:placeholder-shown)):has(input:invalid) {
+  border: 1px solid red;
+}
+.App {
+  min-width: 280px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: white;
+  font-family: "Poppins";
+}
+/* Splash screen starts here. */
+.Splash {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  justify-content: center;
+  background-color: hsl(174, 100%, 29%);
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  transition: opacity 2s ease-out;
+}
+
+.Splash.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Splash img {
+  width: 100px;
+  height: 100px;
+  align-self: center;
+}
+
+/* Splash screen ends here */
+
+/* ScreenOne Starts here */
+.ScreenOne {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 10px;
+}
+
+.Content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
+.Contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  border-top: 1px solid hsl(0, 0%, 50%, 0.3);
+}
+.ScreenOne img {
+  width: 80%;
+}
+
+span {
+  color: hsl(174, 100%, 29%);
+}
+.Dots {
+  display: flex;
+  font-size: 4rem;
+  margin: 20px 0px;
+  color: hsl(0, 0%, 50%, 0.5);
+}
+.ScreenOne h4 {
+  font-size: 1.5rem;
+  width: 80%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+button {
+  border: none;
+  color: white;
+  background-color: hsl(174, 100%, 29%);
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Poppins";
+}
+/* ScreenOne ends here */
+
+/* SignUp starts here */
+
+select {
+  border: none;
+  outline: none;
+  background-color: inherit;
+  order: 2;
+  margin-left: 2px;
+  margin-top: -7px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  scrollbar-width: none;
+}
+
+select::-webkit-scrollbar {
+  display: none;
+}
+
+.SignUp {
+  background-color: white;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.SignUp button {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.SignUp p {
+  color: hsl(174, 100%, 29%);
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.Phone {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.CountryCode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.placeholder:empty::before {
+  content: "+233";
+  color: gray;
+  margin-left: 20px;
+}
+.CountryCode p {
+  display: none;
+}
+.CountryCode img {
+  width: 25px;
+  height: 15px;
+}
+
+.Phone .Prefix {
+  min-width: 95px;
+  max-width: 100px;
+}
+.Phone .Suffix {
+  width: 100%;
+}
+
+option {
+  text-align: center;
+}
+.Icons {
+  background-color: hsl(174, 100%, 29%, 0.2);
+  display: flex;
+  overflow: hidden;
+  padding: 2px;
+  align-items: center;
+  border-radius: 10px;
+  gap: 2px;
+  position: relative;
+}
+
+.Icons img {
+  margin-left: 10px;
+}
+
+input {
+  border: none;
+  outline: none;
+  height: 100%;
+  background-color: initial;
+  padding: 10px;
+  color: hsl(174, 100%, 29%);
+}
+
+#Password {
+  font-size: 0.9rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  gap: 10px;
+}
+/* SignUp ends here */
+
+/* Sign In starts here */
+.SignIn {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 50px;
+  width: 100%;
+}
+.Welcome {
+  background-color: hsl(174, 100%, 29%);
+  padding: 20px;
+  color: white;
+  height: 25%;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+
+.Welcome h2 {
+  margin: 10px 0px;
+}
+
+.Entry img {
+  height: 20px;
+  width: 20px;
+}
+.Entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  gap: 20px;
+}
+.Entry button {
+  width: 100%;
+}
+.EyeLogin {
+  position: absolute;
+  right: 10px;
+}
+.Entry .Icons {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.Entry input {
+  color: black;
+}
+
+.ForgotPassword {
+  display: flex;
+  font-size: 0.6rem;
+  margin-top: -10px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.Remember {
+  display: flex;
+  align-items: center;
+}
+#CheckBox {
+  accent-color: hsl(174, 100%, 29%);
+  margin-right: 10px;
+}
+
+.SignIn button {
+  margin: 30px 0px;
+}
+
+.LoginRedirect p,
+.LoginRedirect span {
+  margin-top: -20px;
+  font-size: 0.9rem;
+}
+.LoginRedirect p {
+  color: black;
+}
+
+.CreateAccount {
+  margin-top: -30px;
+  display: flex;
+  font-size: 0.9rem;
+}
+
+span {
+  cursor: pointer;
+}
+/* Sign In ends here */
+
+/* Home page starts here */
+.HomePage {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  width: 100%;
+  background-color: white;
+}
+/* start of the nav section in the home page */
+.NavSection {
+  width: 100%;
+  padding: 20px;
+}
+
+.Location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin-bottom: 15px;
+}
+
+.LocaleSpot {
+  display: flex;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.Search {
+  background-color: hsl(0, 0%, 50%, 0.3);
+  padding: 5px 10px;
+  align-self: center;
+  min-width: 70%;
+  max-width: 80%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  /* justify-content: center; */
+}
+
+.Filter {
+  position: absolute;
+  z-index: 4;
+  right: 20px;
+}
+
+/* end of the nav section in the home page */
+
+/* start of the MainBody  section in the home page */
+.MainBody {
+  width: 100%;
+  align-self: center;
+  margin-bottom: 100px;
+}
+
+.Offers {
+  display: flex;
+  padding: 10px;
+}
+.Offers img {
+  width: 100%;
+  margin-top: -45px;
+}
+
+.Services {
+  background-color: hsl(174, 100%, 29%, 0.2);
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ServiceCatalogue p {
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+.ServicesMenu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  min-width: 70%;
+  max-width: 80%;
+  margin: 10px auto;
+
+  padding-bottom: 15px;
+}
+.ServiceCatalogue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Specialist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-top: 15px;
+}
+
+.SpecialistGrid {
+  width: 90%;
+}
+.TopSpecialist {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  font-size: 0.8rem;
+  margin: 20px 0px;
+  gap: 15px;
+}
+
+.Tag {
+  color: gray;
+  font-size: 0.6rem;
+  text-align: center;
+}
+
+.SpecialistId {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Salon {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: start;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.Salon h4 {
+  font-size: 0.9rem;
+}
+
+.SalonImg {
+  width: 80px;
+  height: 80px;
+}
+
+.Star {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.Star img {
+  width: 15px;
+  height: 15px;
+  margin-top: -3px;
+}
+
+.Bookings {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 5px;
+}
+.BookNow {
+  color: white;
+  background-color: hsl(174, 100%, 29%);
+  padding: 5px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+/* end of the MainBody  section in the home page */
+
+/* footer section starts here */
+footer {
+  border-top: 1px solid hsl(0, 0%, 50%, 0.3);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  text-align: center;
+  padding: 20px 5px;
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.FooterMenu img {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+.FooterMenu p {
+  font-size: 0.6rem;
+}
+/* footer section ends here */
+
+/* Home page ends here */
+
+/* Profile page starts here */
+.Profile {
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+
+.EditSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 30px;
+  gap: 5px;
+  border-bottom: 1px solid hsl(0, 0%, 50%, 0.2);
+  padding-bottom: 40px;
+}
+.EditSection .BookNow {
+  padding: 10px 5px;
+  cursor: pointer;
+}
+
+.EditSection p {
+  font-size: 0.8rem;
+  margin-bottom: 7px;
+}
+
+.ProfileCatalogue {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+}
+.ProfileMenu {
+  display: flex;
+  padding: 10px 10px;
+}
+
+.ProfileMenuItem {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-basis: 80%;
+  margin-left: 10px;
+}
+
+.PictureUpload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+}
+.ProfilePicture {
+  border: 3px solid hsl(174, 100%, 29%);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.Upload {
+  width: 85px;
+  height: 90px;
+  position: relative;
+}
+.ProfilePicture img {
+  width: 100%;
+  height: 100%;
+}
+
+.ProfileCamera {
+  background-color: hsl(174, 100%, 29%);
+
+  padding: 5px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.ProfileDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.UpdateProfile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 35px;
+}
+
+.UpdateProfile input {
+  width: 100%;
+  background-color: hsl(174, 100%, 29%, 0.15);
+  border-radius: 10px;
+  margin: 10px 0px;
+  color: gray;
+}
+
+.UpdatePage {
+  margin: 15px auto;
+  height: 30px;
+}
+
+.ProfileEdit,
+.Profile {
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+/* Profile page ends here */
+
+/* book now page starts here */
+.Spa {
+  overflow: scroll;
+  height: 100vh;
+}
+
+.SpaIntro {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.SpaRating {
+  width: 100%;
+  position: relative;
+}
+
+.SpaCommons {
+  position: absolute;
+  z-index: 3;
+  bottom: 45px;
+  background-color: white;
+  padding: 5px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.Left {
+  left: 25px;
+}
+
+.Rights {
+  right: 70px;
+}
+
+.Right {
+  right: 25px;
+}
+.StoreImage {
+  width: 100%;
+}
+
+.SpaReview {
+  position: absolute;
+  gap: 5px;
+  bottom: -10px;
+  width: 170px;
+}
+
+.SpaName {
+  padding: 15px;
+  border-bottom: 1px solid hsl(0, 0%, 50%, 0.2);
+  margin-bottom: 10px;
+}
+
+.Spa p {
+  font-size: 0.8rem;
+  color: gray;
+}
+.SpaReview p {
+  color: white;
+}
+
+.SpaLocale {
+  display: flex;
+  gap: 10px;
+  padding: 5px 15px;
+}
+.SpaLocale p {
+  font-size: 0.7rem;
+}
+
+.SpaAddress {
+  padding: 20px;
+  columns: 5;
+  font-size: 0.8rem;
+  margin-top: -20px;
+}
+
+.SpaAddressItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.SpaAddressItem img {
+  background-color: hsl(174, 100%, 29%, 0.2);
+  border-radius: 50%;
+  padding: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+.SpaAddressItem p {
+  text-align: center;
+  font-size: 0.7rem;
+  color: black;
+}
+.ServicesItem {
+  display: flex;
+  justify-content: space-between;
+  width: clamp(60%, 83%, 90%);
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.SpaServices h4 {
+  margin: 5px 15px;
+}
+
+.Appointment {
+  width: clamp(60%, 70%, 80%);
+  margin: 20px auto;
+  cursor: pointer;
+}
+
+.SpaNav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-top: -10px;
+  cursor: pointer;
+  border-bottom: 1px solid hsl(0, 0%, 50%, 0.3);
+}
+
+.nav-link {
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.nav-link:hover {
+  color: hsl(174, 100%, 29%);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  background-color: hsl(174, 100%, 29%);
+  bottom: -7px;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.BrandPersonnel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.SpecialPersonnel {
+  width: clamp(100px, 135px, 200px);
+  margin-top: 10px;
+}
+.SpecialistDetails {
+  position: relative;
+}
+.SpecialistRate {
+  background-color: white;
+  justify-content: center;
+  width: 50px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 70px;
+  right: 10px;
+}
+
+.Gallery {
+  columns: 3;
+  width: 100%;
+  gap: 0px;
+  padding: 10px;
+  align-items: center;
+}
+
+.Gallery img {
+  height: clamp(60px, 85px, 100px);
+  width: clamp(60px, 85px, 100px);
+}
+
+.FiveStar {
+  display: flex;
+  gap: 2px;
+}
+
+.FiveStar img {
+  height: 10px;
+  width: 10px;
+}
+
+.ReviewItem {
+  padding: 10px;
+}
+
+.ReviewItemList {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0px;
+  border: 1px solid hsl(0, 0%, 50%, 0.5);
+  border-radius: 10px;
+  padding: 10px;
+}
+/* book now page ends here */
+
+/* Upload Modal starts here */
+.Modal {
+  background-color: hsl(174, 100%, 29%);
+  border-radius: 15px;
+  border-bottom-left-radius: 1px;
+  position: absolute;
+  z-index: 5;
+  top: 72px;
+  right: 22px;
+  width: 120px;
+  text-align: center;
+  color: white;
+}
+.Update {
+  border-bottom: 1px solid white;
+}
+.Modal p {
+  cursor: pointer;
+  padding: 5px;
+}
+.Hidden {
+  display: none;
+}
+/* Upload Modal ends here */
+
+@media (min-width: 350px) {
+  .Prefix {
+    flex-basis: 40%;
+  }
+}

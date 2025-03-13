@@ -1,0 +1,76 @@
+import { create } from "zustand";
+
+const GOOGLE_API_KEY = "YOUR_GOOGLE_API_KEY"; // Replace with your Google API Key
+
+export const useCurrentTimeStore = create((set) => ({
+  hours: new Date().getHours(),
+  greeting: "",
+  town: "",
+  city: "",
+  country: "",
+
+  updateTime: () => {
+    navigator.geolocation.getCurrentPosition(
+      async (position) => {
+        const { latitude, longitude } = position.coords;
+
+        try {
+          // Fetch location details using Google Maps API
+          const response = await fetch(
+            `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${GOOGLE_API_KEY}`
+          );
+          const data = await response.json();
+
+          if (data.status === "OK") {
+            let town = "Unknown Town";
+            let city = "Unknown City";
+            let country = "Unknown Country";
+
+            // Loop through address components to find town, city, and country
+            for (let component of data.results[0].address_components) {
+              if (component.types.includes("sublocality") || component.types.includes("locality")) {
+                town = component.long_name;
+              }
+              if (component.types.includes("administrative_area_level_2")) {
+                city = component.long_name;
+              }
+              if (component.types.includes("country")) {
+                country = component.long_name;
+              }
+            }
+
+            // Get local time
+            const localTime = new Date().toLocaleTimeString("en-US", {
+              hour: "numeric",
+              hour12: false,
+              timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+            });
+
+            const hours = parseInt(localTime.split(":")[0]);
+
+            let greeting = "Evening";
+            if (hours < 12) {
+              greeting = "Morning";
+            } else if (hours < 15) {
+              greeting = "Afternoon";
+            }
+
+            set({ hours, greeting, town, city, country });
+          } else {
+            console.error("Google Geocoding API Error:", data.status);
+          }
+        } catch (error) {
+          console.error("Error fetching location:", error);
+        }
+      },
+      (error) => {
+        console.error("Error getting geolocation:", error);
+      }
+    );
+  },
+}));
+
+// Auto-update every 1 minute
+setInterval(() => {
+  useCurrentTimeStore.getState().updateTime();
+}, 60000);
