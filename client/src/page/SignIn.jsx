@@ -13,7 +13,7 @@ function SignIn() {
     <>
       <div className="SignIn">
         <div className="Welcome">
-          <p>Hi {user.displayName}</p>
+          <p>Hi</p>
           <h2>Welcome Back!</h2>
           <p>log in to continue</p>
         </div>

@@ -4,11 +4,9 @@ import notification from "/src/assets/images/bell.svg";
 import search from "/src/assets/images/search.svg";
 import filter from "/src/assets/images/Vector2.svg";
 import { useCurrentTimeStore } from "../page/Store";
-import { useAuthStore } from "../page/Store";
 
 function NavSection() {
   const { greeting, city, country, updateTime } = useCurrentTimeStore();
-  const user = useAuthStore((state) => state.user);
 
   useEffect(() => {
     updateTime();
@@ -33,7 +31,7 @@ function NavSection() {
           <img src={notification} alt="notification" />
         </div>
         <div className="Greatings">
-          <h4>{greeting} Bentum</h4>
+          <h4>{greeting}</h4>
         </div>
         <div className="Search">
           <img src={search} alt="search" />
