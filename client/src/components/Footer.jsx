@@ -3,6 +3,15 @@ import { useNavigate } from "react-router-dom";
 
 function Footer() {
   const navigate = useNavigate();
+  // const clearUser = useAuthStore((state) => state.clearUser);
+
+  // const handleLogout = () => {
+  //   auth.signOut();
+  //   cookies.remove("auth-tokens");
+  //   clearUser();
+  //   navigate("/login");
+  // };
+
   return (
     <>
       <footer>

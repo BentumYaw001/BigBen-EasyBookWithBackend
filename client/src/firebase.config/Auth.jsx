@@ -2,7 +2,7 @@ import { auth, provider } from "./FirebaseConfig.js";
 import { signInWithPopup } from "firebase/auth";
 import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
-import { useAuthStore } from "../page/Store.jsx";
+
 const cookies = new Cookies();
 
 function Auth() {
@@ -10,15 +10,8 @@ function Auth() {
   const SignInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
-
-      const user = result.user;
-      const userName = user.displayName;
-
-      cookies.set("auth-tokens", user.refreshToken, { path: "/" });
-
-      useAuthStore.getState().setUser(user);
-
-      console.log("User Name:", userName);
+      cookies.set("auth-tokens", result.user.refreshToken, { path: "/" });
+      // setTrue();
       navigate("/home-screen");
     } catch (error) {
       console.error("Error signing in:", error);
