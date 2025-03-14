@@ -1,14 +1,22 @@
-import { Navigate, Routes, Route, useLocation } from "react-router-dom";
+import { useNavigate, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import SlideTransition from "./SlideTransition";
 import { RouteData } from "./Data";
 import Cookies from "universal-cookie";
+import { useEffect } from "react";
 
 const cookies = new Cookies();
 
 function AnimatedRoutes() {
   const location = useLocation();
-  const authToken = cookies.get("auth-tokens");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = cookies.get("auth-tokens");
+    if (token) {
+      navigate("/home-screen");
+    }
+  }, []);
 
   return (
     <AnimatePresence mode="wait">
