@@ -162,7 +162,7 @@ select::-webkit-scrollbar {
 }
 
 .placeholder:empty::before {
-  content: "+233";
+  content: "N/A";
   color: gray;
   margin-left: 20px;
 }
