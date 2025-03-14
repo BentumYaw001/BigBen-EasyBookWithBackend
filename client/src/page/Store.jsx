@@ -89,11 +89,19 @@ export const useCountryStore = create((set) => ({
 }));
 
 const cookies = new Cookies();
-export const useAuthStore = create((set) => ({
-  firstName: "",
-  setFirstName: (name) => set({ firstName: name }),
-  logout: () => {
-    cookies.remove("auth-tokens", { path: "/" });
-    set({ firstName: "" });
-  },
-}));
+export const useAuthStore = create((set) => {
+  const storedName = localStorage.getItem("userName") || "";
+
+  return {
+    firstName: storedName,
+    setFirstName: (name) => {
+      localStorage.setItem("userName", name);
+      set({ firstName: name });
+    },
+    logout: () => {
+      cookies.remove("auth-tokens", { path: "/" });
+      localStorage.removeItem("userName");
+      set({ firstName: "" });
+    },
+  };
+});

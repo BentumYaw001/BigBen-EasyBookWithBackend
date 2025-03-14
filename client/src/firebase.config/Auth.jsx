@@ -26,10 +26,10 @@ function Auth() {
       const nameParts = user.displayName.split(" ");
       const firstName = nameParts.slice(0, 2).join(" ");
 
+      localStorage.setItem("userName", firstName);
       useAuthStore.getState().setFirstName(firstName);
       navigate("/home-screen");
       cookies.set("auth-tokens", user.refreshToken, { path: "/" });
-      localStorage.setItem("userName", firstName);
     } catch (error) {
       console.error("Error signing in:", error);
     }
