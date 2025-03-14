@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import ProfilePic from "/src/assets/images/specialist/portfolio picture.jpg";
+import Cookies from "universal-cookie";
 
 export const useSplashStore = create((set) => ({
   loading: true,
@@ -87,7 +88,12 @@ export const useCountryStore = create((set) => ({
   setSelectedCountry: (selectedCountry) => set({ selectedCountry }),
 }));
 
+const cookies = new Cookies();
 export const useAuthStore = create((set) => ({
   firstName: "",
   setFirstName: (name) => set({ firstName: name }),
+  logout: () => {
+    cookies.remove("auth-tokens", { path: "/" });
+    set({ firstName: "" });
+  },
 }));

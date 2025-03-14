@@ -10,13 +10,13 @@ const cookies = new Cookies();
 function Auth() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = cookies.get("auth-tokens");
-    console.log(token);
-    if (token) {
-      navigate("/home-screen");
-    }
-  }, [navigate]);
+  // useEffect(() => {
+  //   const token = cookies.get("auth-tokens");
+  //   console.log(token);
+  //   if (token) {
+  //     navigate("/home-screen");
+  //   }
+  // }, [navigate]);
   const SignInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
