@@ -16,7 +16,7 @@ function SpaIntro() {
             src={BackImage}
             alt=""
             className="SpaCommons Left"
-            onClick={() => navigate("/home-screen")}
+            onClick={() => navigate(-1)}
           />
           <img src={StoreImage} alt="" className="StoreImage" />
           <img src={ShareImage} alt="" className="SpaCommons Rights" />
