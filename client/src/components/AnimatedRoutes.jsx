@@ -17,13 +17,7 @@ function AnimatedRoutes() {
           <Route
             key={item.path}
             path={item.path}
-            element={
-              authToken ? (
-                <Navigate to="/home-screen" replace />
-              ) : (
-                <SlideTransition>{item.page}</SlideTransition>
-              )
-            }
+            element={<SlideTransition>{item.page}</SlideTransition>}
           />
         ))}
       </Routes>

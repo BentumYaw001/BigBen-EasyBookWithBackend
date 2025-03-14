@@ -4,11 +4,10 @@ import closedEye from "/src/assets/images/closed eye.svg";
 import password from "/src/assets/images/mdi_password.svg";
 import emailNonFill from "/src/assets/images/email-nonfill.svg";
 import Auth from "../firebase.config/Auth";
-import { useAuthStore } from "./Store";
 
 function SignIn() {
   const navigate = useNavigate();
-  const user = useAuthStore((state) => state.user);
+
   return (
     <>
       <div className="SignIn">

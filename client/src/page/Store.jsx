@@ -88,7 +88,6 @@ export const useCountryStore = create((set) => ({
 }));
 
 export const useAuthStore = create((set) => ({
-  user: null,
-  setUser: (user) => set({ user }),
-  clearUser: () => set({ user: null }),
+  firstName: "",
+  setFirstName: (name) => set({ firstName: name }),
 }));
