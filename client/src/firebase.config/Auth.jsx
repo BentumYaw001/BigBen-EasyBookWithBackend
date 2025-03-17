@@ -4,6 +4,7 @@ import Cookies from "universal-cookie";
 import { useNavigate } from "react-router-dom";
 import { useAuthStore } from "../page/Store.jsx";
 import { useEffect } from "react";
+import googleImage from "/src/assets/images/google.png";
 
 const cookies = new Cookies();
 
@@ -37,7 +38,9 @@ function Auth() {
 
   return (
     <div className="Auth">
-      <button onClick={SignInWithGoogle}>Sign In With Google</button>
+      <button onClick={SignInWithGoogle}>
+        <img src={googleImage} alt="" /> google{" "}
+      </button>
     </div>
   );
 }
