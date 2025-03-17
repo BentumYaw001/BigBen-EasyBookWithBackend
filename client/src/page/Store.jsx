@@ -37,7 +37,6 @@ export const useCurrentTimeStore = create((set) => ({
           const city = data.city || "Unknown City";
           const country = data.countryName || "Unknown Country";
 
-          // Get local time based on detected time zone
           const localTime = new Date().toLocaleTimeString("en-US", {
             hour: "numeric",
             hour12: false,

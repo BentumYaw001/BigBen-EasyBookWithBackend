@@ -1,6 +1,9 @@
 * {
   margin: 0;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .Icons:has(input:not(:placeholder-shown)):has(input:valid) {
   border: 1px solid green;

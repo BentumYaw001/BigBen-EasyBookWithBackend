@@ -12,6 +12,7 @@ function NavSection() {
 
   useEffect(() => {
     updateTime();
+    console.log("rendered");
   }, []);
   return (
     <>
