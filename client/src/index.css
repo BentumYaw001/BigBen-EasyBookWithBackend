@@ -311,7 +311,7 @@ form {
 }
 
 .CreateAccount {
-  margin-top: -30px;
+  margin-top: -40px;
   display: flex;
   font-size: 0.9rem;
 }
@@ -321,13 +321,14 @@ span {
 }
 
 .Auth {
-  margin-top: -90px;
+  margin-top: -80px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .Auth button {
+  display: none;
   font-size: 1.2rem;
   background-color: white;
   color: black;
