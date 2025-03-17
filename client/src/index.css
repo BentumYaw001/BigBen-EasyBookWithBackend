@@ -233,8 +233,6 @@ form {
   height: 100vh;
   gap: 50px;
   width: 100%;
-  overflow-y: scroll;
-  scrollbar-width: none;
 }
 .Welcome {
   background-color: hsl(174, 100%, 29%);
